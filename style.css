@@ -30,11 +30,43 @@ main {
 }
 
 h3 {
-    padding: 15px;
+    padding: 30px;
 }
 
 footer {
     height: 80px;
     background-color: bisque;
     box-shadow: 0px -10px 15px 0px rgba(49, 49, 49, 0.75);
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 15px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.remove {
+    background-color: red;
+}
+
+#books {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
