@@ -12,9 +12,40 @@
 <body>
     <nav>
         <div id="wel">Welcome to your personal library!</div>
-        <button id="add" class="btn btn-primary">Add Book</button>
     </nav>
-    <main></main>
+    <main>
+        <h3>Add a Book?</h3>
+        <form class="row gy-2 gx-3 align-items-center">
+            <div class="col-auto">
+              <label class="visually-hidden" for="autoSizingInput">Title</label>
+              <input type="text" class="form-control" id="title" placeholder="Title">
+            </div>
+            <div class="col-auto">
+              <label class="visually-hidden" for="autoSizingInputGroup">Author</label>
+              <input type="text" class="form-control" id="author" placeholder="Author">
+            </div>
+            <div class="col-sm-3">
+                <label class="visually-hidden" for="autoSizingInputGroup">Pages</label>
+                <input type="number" min="0" class="form-control" id="pages" placeholder="Pages">
+            </div>
+            <div class="col-auto">
+              <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+              <select class="form-select" id="read">
+                <option selected disabled>Read?</option>
+                <option value="1">Read it!</option>
+                <option value="2">Not yet</option>
+              </select>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+
+        <h3>My Books</h3>
+        <div id="books">
+
+        </div>
+    </main>
     <footer></footer>
     <script src="script.js"></script>
 </body>
