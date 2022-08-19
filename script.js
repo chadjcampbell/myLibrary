@@ -42,7 +42,7 @@ function renderLibrary() {
             <input onclick="readornot(this)" class="form-check-input" type="checkbox" role="switch" name="cardread" data-read="${myLibrary[x].read}" data-id="${myLibrary[x].booknumber}" ${checked}>
             <label class="form-check-label" for="cardread">Read</label>
           </div>
-          <button class="remove btn btn-primary">Remove</button>
+          <button data-id="${myLibrary[x].booknumber}" onclick="remove(this)" class="remove btn btn-primary">Remove</button>
         </div>
       </div>`
     }
@@ -57,5 +57,14 @@ function readornot(element) {
     else {
         myLibrary[id].read = 1;
     }
+    renderLibrary();
+}
+
+function remove(element) {
+    let id = element.dataset.id;
+    let indexOfBook = myLibrary.findIndex (book => {
+        return book.booknumber == id;
+    });
+    myLibrary.splice(indexOfBook, 1);
     renderLibrary();
 }
