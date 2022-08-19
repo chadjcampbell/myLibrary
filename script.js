@@ -39,11 +39,23 @@ function renderLibrary() {
           <h7 class="card-title">${myLibrary[x].author}</h7>
           <p class="card-text">Pages: ${myLibrary[x].pages} </p>
           <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" name="cardread" id="cardread" ${checked}>
+            <input onclick="readornot(this)" class="form-check-input" type="checkbox" role="switch" name="cardread" data-read="${myLibrary[x].read}" data-id="${myLibrary[x].booknumber}" ${checked}>
             <label class="form-check-label" for="cardread">Read</label>
           </div>
           <button class="remove btn btn-primary">Remove</button>
         </div>
       </div>`
     }
+}
+
+function readornot(element) {
+    let id = element.dataset.id;
+    let read = element.dataset.read;
+    if (read == 1) {
+        myLibrary[id].read = 2;
+    }
+    else {
+        myLibrary[id].read = 1;
+    }
+    renderLibrary();
 }
